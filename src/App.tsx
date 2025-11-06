@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import Papa from 'papaparse';
 
 /**
- * Market Intelligence Graph — compact demo (≤ ~600 lines)
+ * Market Intelligence Graph — compact demo (≈600 lines)
  * Tabs: Graph | Market Pulse | League Table
  * Theme: tech/corporate blue
  */
@@ -307,7 +307,7 @@ function buildPulseFeed({edges,bonds,ratings,deals, news=[]}){
   (edges||[]).filter(e=> String(e.type).includes('NEWS_CO_MENTION')).forEach(e=>{ const s=extractTicker(typeof e.source==='string'? e.source : e?.source?.id); const t=extractTicker(typeof e.target==='string'? e.target : e?.target?.id); items.push({ ts:new Date().toISOString(), tone:'low', kind:'Headlines', text:`Headlines: ${s} ↔ ${t}` }); });
   const debtRows=summarizeDebtByIssuer(bonds||[], ratings||[]); debtRows.filter(r=> (r.next12m||0) > 0).forEach(r=>{ items.push({ ts:new Date().toISOString(), tone:(r.next12m||0)>=1_000_000_000?'high':'med', kind:'Redemption', text:`Redemption: ${r.issuer} ${prettyUSD(r.next12m)} in next 12m` }); });
   debtRows.filter(r=> (r.dispersion||0) >= 2).forEach(r=>{ items.push({ ts:new Date().toISOString(), tone:'med', kind:'Ratings', text:`Ratings dispersion: ${r.issuer}` }); });
-  (news||[]).forEach(n=>{ items.push({ ts:n.ts||new Date().toISOString(), tone:n.tone||'low', kind:'News', text=n.title||'News item', url:n.url, summary:n.summary }); });
+  (news||[]).forEach(n=>{ items.push({ ts:n.ts||new Date().toISOString(), tone:n.tone||'low', kind:'News', text:n.title||'News item', url:n.url, summary:n.summary }); });
   return items.sort((a,b)=> new Date(b.ts) - new Date(a.ts)).slice(0,20);
 }
 function MarketPulsePanel({ edges, cfg, onUpdateCfg, bonds = SAMPLE_BONDS, ratings = SAMPLE_RATINGS, deals = SAMPLE_DEALS }){
@@ -435,7 +435,10 @@ export default function KnowledgeGraphDemo(){
                 <div className='mt-3 space-y-2'>
                   {topDegree.map(({node,score})=> (
                     <div key={node.id} className='flex items-center justify-between text-sm bg-blue-50 border border-blue-100 rounded-xl px-3 py-2' title='Node with high weighted connections is influential in this network segment.'>
-                      <div className='truncate'><div className='font-medium text-blue-900'>{node.label}</div><div className={`text-xs ${COLORS.textMuted}`}>{node.type}</div></div>
+                      <div className='truncate'>
+                        <div className='font-medium text-blue-900'>{node.label}</div>
+                        <div className={`${COLORS.textMuted} text-xs`}>{node.type}</div>
+                      </div>
                       <div className='font-mono text-blue-900'>{(score||0).toFixed(2)}</div>
                     </div>
                   ))}
