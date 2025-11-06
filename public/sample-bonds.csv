@@ -1,0 +1,3 @@
+id,issuer_ticker,label,face_value,coupon,issue_date,maturity_date,rating
+BOND:AAPL-2029,AAPL,AAPL 3.1% 2029,1500000000,0.031,2022-10-01,2029-10-01,AA-
+BOND:MSFT-2030,MSFT,MSFT 2.8% 2030,2200000000,0.028,2020-05-01,2030-05-01,AAA

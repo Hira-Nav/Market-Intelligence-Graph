@@ -1,0 +1,5 @@
+id,label,type,ticker,sector,country
+COMP:AAPL,Apple Inc.,Company,AAPL,Technology,United States
+COMP:MSFT,Microsoft,Company,MSFT,Technology,United States
+COMP:NVDA,NVIDIA,Company,NVDA,Technology,United States
+COMP:AMZN,Amazon,Company,AMZN,Consumer Disc.,United States

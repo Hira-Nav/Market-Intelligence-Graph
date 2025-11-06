@@ -1,0 +1,3 @@
+company_a,company_b,deal_type,announced_date,value_usd,notes,bookrunners
+COMP:MSFT,COMP:NVDA,CLOUD_PARTNERSHIP,2024-11-01,1200000000,AI infra,"JPMorgan; Goldman Sachs"
+COMP:AAPL,COMP:AMZN,SUPPLY_AGREEMENT,2025-02-10,500000000,logistics,BofA Securities

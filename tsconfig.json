@@ -9,12 +9,12 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
-    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "noEmit": true,
-    "strict": false
+    "noEmit": true
   },
   "include": [
     "src"
