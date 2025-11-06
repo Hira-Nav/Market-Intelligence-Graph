@@ -161,7 +161,7 @@ function GraphCanvas({ nodes, edges, width, height }){
   const nodeR = (n)=> n.type==='Company'?10 : n.type==='Debt'?6 : n.type==='Bank'?9 : 7;
   const strokeFor = (n)=> n.type==='Company'? '#1e3a8a' : n.type==='Bank'? '#0c4a6e' : '#1e293b';
   return (
-    <svg width={width} height={height} role='img' aria-label='Knowledge graph canvas' className='rounded-xl border border-blue-100' style={{background: 'radial-gradient(1200px 600px at 70% -10%, #e0f2fe 0%, #eff6ff 40%, #ffffff 90%)'}}>
+    <svg viewBox="0 0 980 520" preserveAspectRatio="xMidYMid meet"  role='img' aria-label='Knowledge graph canvas' className='rounded-xl border border-blue-100' style={{background: 'radial-gradient(1200px 600px at 70% -10%, #e0f2fe 0%, #eff6ff 40%, #ffffff 90%)'}}>
       {edges.map((e,i)=>{ const sId=typeof e.source==='string'?e.source:e?.source?.id; const tId=typeof e.target==='string'?e.target:e?.target?.id; const s=pos[sId], t=pos[tId]; if(!s||!t) return null; const w=Math.max(1,Math.min(8,(e.weight||1))); return (<line key={i} x1={s.x} y1={s.y} x2={t.x} y2={t.y} stroke={COLORS.edge} strokeOpacity={0.4} strokeWidth={w}/>); })}
       {nodes.map(n=>{ const p=pos[n.id]; if(!p) return null; const fill=TYPE_COLORS[n.type]||COLORS.primaryLight; return (<g key={n.id} transform={`translate(${p.x},${p.y})`}><circle r={nodeR(n)} fill={fill} stroke={strokeFor(n)} strokeWidth={1.5}/><text y={-12} textAnchor='middle' className='text-[10px]' style={{fill:'#0f172a'}}>{n.label}</text></g>); })}
     </svg>
