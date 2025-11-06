@@ -312,7 +312,7 @@ function buildPulseFeed({edges,bonds,ratings,deals, news=[]}){
 }
 function MarketPulsePanel({ edges, cfg, onUpdateCfg, bonds = SAMPLE_BONDS, ratings = SAMPLE_RATINGS, deals = SAMPLE_DEALS }){
   const [news] = useState([
-    { title: 'Alphabet to sell at least $3 billion in U.S. dollar bonds', url: 'https://finance.yahoo.com/news/alphabet-sell-least-3-billion-082528526.html', summary: 'Reported multi-tranche USD offering; use of proceeds: general corporate purposes.', tone: 'med', ts: new Date().toISOString() }
+    { title: 'Alphabet Sells $25 Billion of Corporate Bonds in US, Europe', url: 'https://finance.yahoo.com/news/alphabet-sell-least-3-billion-082528526.html', summary: (Bloomberg) -- Alphabet Inc. sold $17.5 billion of bonds in the US, after issuing €6.5 billion ($7.48 billion) to fund AI and cloud investments, marking its second euro market entry in 2025.', tone: 'med', ts: new Date().toISOString() }
   ]);
   const feed = useMemo(()=> buildPulseFeed({edges, bonds, ratings, deals, news}), [edges, bonds, ratings, deals, news]);
   return (
