@@ -395,8 +395,8 @@ export default function KnowledgeGraphDemo(){
             <span>About this demo</span>
           </summary>
           <div className='mt-2 text-sm text-slate-700 space-y-2'>
-            <p><strong>Who this serves:</strong> Syndicate & DCM bankers, traders, sales, and risk teams who need a compact view of issuer networks, upcoming redemptions, and bookrunner positioning.</p>
-            <p><strong>Impact:</strong> Surface actionable moments (redemptions, leadership shifts, co-mentions) quickly; focus coverage and origination; spot cross-sell opportunities across shared partners and banks.</p>
+            <p><strong>Who this serves:</strong> Analysts, Data Modellers, Data Scientists, Syndicate & DCM bankers, traders, sales, and risk teams who need a compact view of issuer networks, upcoming redemptions, and bookrunner positioning.</p>
+            <p><strong>Impact:</strong> Surface actionable moments (redemptions, leadership shifts, co-mentions) quickly; focus coverage and origination; spot cross-sell opportunities across shared partners and banks. Potential for pre-modelling and early adoption for Generative AI or Language model solutions </p>
             <p><strong>How the knowledge graph works:</strong> Nodes represent <em>companies</em>, <em>bonds</em>, and <em>banks</em>. Edges represent relationships (deals, supply, co-mentions, bookrunner links). Edge width is a weighted strength. You can rebalance strengths under <em>Relationship Weights</em> and filter the view with the toggles. The <em>Market Pulse</em> tab converts these signals into a simple alert feed.</p>
           </div>
         </details>
